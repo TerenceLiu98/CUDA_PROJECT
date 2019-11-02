@@ -34,7 +34,7 @@ int main(){
     cudaMemcpy(B_gpu, b, size, cudaMemcpyHostToDevice);
 
     modular<<<1, 3>>>(A_gpu, B_gpu, C_gpu);
-    modular<<<1, 3>>>(A_gpu, B_gpu, D_gpu);
+    exponentiation<<<1, 3>>>(A_gpu, B_gpu, D_gpu);
 
     // copy memory from device to host 
     // since the result is stored in C_gpu
